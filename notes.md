@@ -125,12 +125,12 @@ A-Z或[:upper:]
 [:space:]  
 [:cntrl:]  
 
-tr 'a-z' 'A-Z' <1.TXT 将小于号变成大于号
-tr '0-9' '@' <1.txt
-tr ':/' "#' <1.txt
-tr -d 'a-z' <1.txt 删除’a-z‘
-tr -dc 'a-z' <1.txt 除了a-z的都删除 取反
-tr -s 将出现的重复字符压缩为1个
+tr 'a-z' 'A-Z' <1.TXT 将小写变成大写  
+tr '0-9' '@' <1.txt  
+tr ':/' "#' <1.txt  
+tr -d 'a-z' <1.txt 删除’a-z‘  
+tr -dc 'a-z' <1.txt 除了a-z的都删除 取反  
+tr -s 将出现的重复字符压缩为1个  
 
 # short cuts
 ^r 搜索历史命令
@@ -146,3 +146,71 @@ tr -s 将出现的重复字符压缩为1个
 [！]匹配list里的任意单个字符 取反   
 [1-13] 1-1|3  
 {1..13} 1 到 13  
+
+# shell
+分类 :
+/bin/sh
+/bin/bash
+/bin/dash
+
+一个终端会打开一个shell
+
+# 脚本的写法
+#!/bin/bash or #!/bin/env bash
+#Name Desc path usage update
+chmod +x first_shell.sh 
+
+bash -x first _shell.sh 打印一行，运行一行
+bash -n first_shell.sh 检查是否有问题
+
+# 变量名的规则
+变量名严格区分大小写
+A=123456
+$A
+${A} ${A:2:5} 从第三个字符开始截取5个字符
+本地变量只针对当前进程生效
+
+# read
+read -p  "p;z input your name" name
+read -n 5 -p "plz input <5"   限制输入长度
+read -s -p 不显示输入
+read -t  -n 限制输入时间 
+
+从文件输入
+read -n 5 -p "plz input <5" <1.txt
+
+# declare 
+-i 整数 
+-r 只读变量  
+-a array
+-A   
+-x declare -x AAA=123 = export AAA=123
+
+#  环境变量
+~/.bashrc 
+争对当前进程有效，能被子进程调用  
+env  查看环境变量    
+set  查看环境变量 和 临时变量   
+
+# 全局变量
+/etc/bashrc bash info for all users   
+/etc/profile 所有用户的全局环境变量  
+$HOME/.bashrc 当前用户的bash信息 set alians umask function  
+$HOME/.bash_profile env variables for current user, load when log in  
+$HOME/.bash_logout load when log out  
+
+# 系统变量
+
+jobs  
+sleep 500 &  后台进行 / ctrl a 后台挂起
+
+# 四则运算
+expr 1 + 1 记得加空格  
+expr 10 \\*5  *要转义  
+n=1; let n=n+1; echo $n  
+let n+=2;  
+
+
+
+
+
