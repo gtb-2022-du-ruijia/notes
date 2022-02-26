@@ -19,8 +19,8 @@
 `[[ -L ./test1 ]]`  can not verify if the link has been removed  
 `[[ ! -f ./file1 ]]` doesn't exist   
 
-`[[ file1 -nt file2 ]]` new 
-`[[ file1 -ot file2 ]]` old
+`[[ file1 -nt file2 ]]` new  
+`[[ file1 -ot file2 ]]` old  
 `[[ file1 -ef file2 ]]` equal/ hard link / have same inode 
 
 ## number 
@@ -36,9 +36,9 @@ string1 = stirng2  if equal
 string1 !=stinrg2  if not equal  
 
 ## and or 
-`[[ 1 -eq 1 -a 1 -ne 0]]` = `[[ 1 -eq 1]]&&[1 -ne 0]`
-`[[ 1 -eq 1 -o 1 -ne 0]]` = `[[ 1 -eq 1]]||[1 -ne 0]`
-`[[ $(id -u) -eq 0 ]] || echo "not admin"`
+`[[ 1 -eq 1 -a 1 -ne 0]]` = `[[ 1 -eq 1]]&&[1 -ne 0]`  
+`[[ 1 -eq 1 -o 1 -ne 0]]` = `[[ 1 -eq 1]]||[1 -ne 0]`  
+`[[ $(id -u) -eq 0 ]] || echo "not admin"`  
 
 # the difference between [ ] and [[ ]]
 
