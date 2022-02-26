@@ -127,7 +127,7 @@ A-Z或[:upper:]
 
 tr 'a-z' 'A-Z' <1.TXT 将小写变成大写  
 tr '0-9' '@' <1.txt  
-tr ':/' "#' <1.txt  
+tr ':/' "#' <1.txt  w
 tr -d 'a-z' <1.txt 删除’a-z‘  
 tr -dc 'a-z' <1.txt 除了a-z的都删除 取反  
 tr -s 将出现的重复字符压缩为1个  
